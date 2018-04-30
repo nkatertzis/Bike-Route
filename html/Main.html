@@ -1,0 +1,75 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+    <!-- Set a title for the page -->
+    <title>
+        Bike Routes
+    </title>
+
+    <!-- This meta element is used to achieve a responsive user interface
+    (for different screen sizes) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Set a stylesheet for the page -->
+    <link type="text/css" rel="stylesheet" href="../css/Main.css" />
+
+    <!-- This script is used to set up a firebase for the app -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+
+    <!-- This script is used to initialize a firebase for the app -->
+    <script>
+        // Initialize Firebase.
+        var config = {
+            apiKey: "AIzaSyCK3aOBneRZOUabHtLGIJ3MkgPJXjHovQc",
+            authDomain: "bikeroute-5a6ab.firebaseapp.com",
+            databaseURL: "https://bikeroute-5a6ab.firebaseio.com",
+            projectId: "bikeroute-5a6ab",
+            storageBucket: "",
+            messagingSenderId: "1013851014298"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <!-- The following scripts are used to activate leaflet library for the app -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.2.rc.2/leaflet.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.2.rc.2/leaflet.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <!-- Create an element to show who is the current user -->
+    <div align="center" style=" word-break: break-all ">
+        User : <output type="text" name="textbox1" id="textbox1" />
+    </div>
+
+    <!-- Create an element to show which is the current user's score -->
+    <div align="center" style=" word-break: break-all ">
+        Score : <output type="number" name="textbox2" id="textbox2" />
+    </div>
+
+    <!-- Create an element to show two function buttons ("Logout" and "Scoreboard") -->
+    <div id="div" align="center">
+
+        <button id="buttonLogout" type="button" style="height:30px;width:150px;background-color:red;margin-left:auto;margin-right:auto;display:inline-block"><a href="../Login.html"><font size="4">Logout</a></font></button>
+
+        <button id="buttonScore" type="button" style="height:30px;width:150px;background-color:green;margin-left:auto;margin-right:auto;display:inline-block"><a href="Scoreboard.html"><font size="4">Scoreboard</a></font></button>
+
+    </div>
+
+    <!-- Create an element to accommodate the map for the app -->
+    <div id='map' />
+
+    <script type="text/javascript" src="../js/Main.js"></script>
+
+</body>
+
+</html>

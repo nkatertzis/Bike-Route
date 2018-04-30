@@ -1,0 +1,77 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+    <!-- Set a title for the page -->
+    <title>
+        Login page
+    </title>
+
+    <!-- This meta element is used to achieve a responsive user interface
+    (for different screen sizes) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Set a stylesheet for the page -->
+    <link rel="stylesheet" type="text/css" href="./css/LoginLayout.css">
+
+</head>
+
+<body>
+
+    <!-- Create a headline for the page -->
+    <h1 align="center" style="font-family:Comic Sans Ms;font-size:20pt;color:#00FF00;">
+        Login Page
+    </h1>
+
+    <!-- Create a form for the page -->
+    <form name="login">
+
+        <!-- Create an image for the form -->
+        <div align="center" class="imgcontainer">
+            <img src="./images/img_avatar.png" alt="Avatar" class="avatar">
+        </div>
+
+        <!-- Create input fields for the page -->
+        <div align="center" class="container">
+
+            <label for="uname"><b>Username</b></label>
+
+            <input type="text" placeholder="Enter Username" name="usr" id="usr" required/>
+
+            <input id="submit" type="button" onclick="check(this.form)" value="Login" align="center" />
+
+            <input id="reset" type="reset" value="Cancel" align="center" />
+
+        </div>
+
+    </form>   
+    
+    <!-- Create a script to check the form for non-empty values -->
+    <script language="javascript">     
+     
+        function check(form) { /*function to check userid & password*/
+
+            // If input field is not empty save inserted data to session and go to welcome page.
+            if (form.usr.value != "") {     
+            
+                var username = form.usr.value;
+
+                window.localStorage.setItem('username', username);
+
+                window.open('./html/Welcome.html', '_self', false) /*opens the target page while Id & password matches*/
+
+            // If input field is empty alert accordingly the user and return.     
+            } else {
+
+                alert("Please enter a username!") /*displays error message*/
+
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
